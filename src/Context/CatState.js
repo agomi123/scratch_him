@@ -40,7 +40,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Move 10 steps
+          1.Move 10 steps
         </div>
       ),
     },
@@ -58,7 +58,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Turn 15 degree clockwise
+          2.Turn 15 degree clockwise
         </div>
       ),
     },
@@ -76,7 +76,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Turn 15 degree anticlockwise
+          3.Turn 15 degree anticlockwise
         </div>
       ),
     },
@@ -94,7 +94,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Go to random Pointer
+          4.Go to random Pointer
         </div>
       ),
     },
@@ -112,7 +112,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Go to X+5
+          5.Go to X+5
         </div>
       ),
     },
@@ -134,7 +134,7 @@ const CatState = (props) => {
             // setButtonClicked({ acc: true, val: 0,x:document.getElementById("xcoor").value });
           }}
         >
-          Change X to
+          6.Change X to
           <input
             type="number"
             val={4}
@@ -160,7 +160,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Say Hello for 2 seconds
+          7.Say Hello for 2 seconds
         </div>
       ),
     },
@@ -179,7 +179,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Say Hello
+          8.Say Hello
         </div>
       ),
     },
@@ -198,7 +198,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Say Hmm for 2 seconds
+          9.Say Hmm for 2 seconds
         </div>
       ),
     },
@@ -216,7 +216,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Say Hmm
+          10.Say Hmm
         </div>
       ),
     },
@@ -234,7 +234,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Show
+          11.Show
         </div>
       ),
     },
@@ -253,7 +253,7 @@ const CatState = (props) => {
             });
           }}
         >
-          hide
+          12.hide
         </div>
       ),
     },
@@ -272,7 +272,7 @@ const CatState = (props) => {
             });
           }}
         >
-          When Flag Clicked
+          13.When Flag Clicked
         </div>
       ),
     },
@@ -290,7 +290,7 @@ const CatState = (props) => {
             });
           }}
         >
-          When Sprite Clicked
+          14.When Sprite Clicked
         </div>
       ),
     },
@@ -309,7 +309,7 @@ const CatState = (props) => {
             });
           }}
         >
-          Delete
+          15.Delete
         </div>
       ),
     },
@@ -330,7 +330,7 @@ const CatState = (props) => {
             // setButtonClicked({ acc: true, val: 0,x:document.getElementById("xcoor").value });
           }}
         >
-          Change Y to
+          16.Change Y to
           <input
             type="number"
             val={4}
@@ -342,9 +342,6 @@ const CatState = (props) => {
       ),
     },
   ];
-  // const x1 = uuid();
-  // const x2 = uuid();
-  
   var columnsFromBackend = {
     [1]: {
       name: "",
@@ -353,7 +350,8 @@ const CatState = (props) => {
     [2]: {
       name: "",
       items: [],
-    },
+    }, 
+    
   };
   const [columns, setColumns] = useState(columnsFromBackend);
   const columnupdate = ( tp) => {

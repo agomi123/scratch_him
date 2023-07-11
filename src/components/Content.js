@@ -14,6 +14,7 @@ const onDragEnd = (result, columns, columnupdate) => {
     const sourceItems = [...sourceColumn.items];
     const destItems = [...destColumn.items];
     const [removed] = sourceItems.splice(source.index, 1);
+    // console.log(removed);
     destItems.splice(destination.index, 0, removed);
     columnupdate({
       ...columns,
@@ -33,6 +34,7 @@ const onDragEnd = (result, columns, columnupdate) => {
     const column = columns[source.droppableId];
     const copiedItems = [...column.items];
     const [removed] = copiedItems.splice(source.index, 1);
+   
     copiedItems.splice(destination.index, 0, removed);
     columnupdate({
       ...columns,
@@ -218,7 +220,7 @@ function Content() {
                           background: "#f0f1f2",
                           padding: 4,
                           width: 350,
-                          minHeight: 1000,
+                          minHeight: 900,
                           overflow:"auto"
                         }}
                         className="w-60 flex-none h-full overflow-y-auto flex flex-col items-start p-2 border-r border-gray-200"

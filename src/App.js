@@ -33,7 +33,6 @@ export default function App() {
   );
 }
 
-
-// Functionality to click on flag and execute code
 // Ability to delete a code-block
 // ability to add multiple code-groups
+

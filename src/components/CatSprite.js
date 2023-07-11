@@ -222,12 +222,41 @@ function CatSprite() {
           // console.log(buttonClicked);
         }}
       />
+      
       <AiTwotoneDelete
         style={{ cursor: "pointer", marginTop: "10px" }}
         onClick={() => {
+          
           // console.log("heelow osjdf");
-          alert("Deleted all code-groups");
+          var vl= document.getElementById("xcor").value-1;
           const itemsFromBackend = a.itemsFromBackend;
+          console.log(vl);
+          if(vl<0){
+            a.columnupdate({
+              [1]: {
+                name: "",
+                items: itemsFromBackend,
+              },
+              [2]: {
+                name: "",
+                items:[],
+              },
+            });
+            return;
+          }
+          // alert("Deleted all code-groups");
+         
+          const itemsFromBackend2 = a.columns;
+          // console.log(itemsFromBackend[2]);
+          const tpp = itemsFromBackend2[2].items;
+          var lst=[];
+          tpp.map((item, index) => {
+            // // console.log(buttonClicked,item.val);
+            // lt.push(item.val);
+             if(item.val!=vl){
+              lst.push(item);
+             }
+          });
           a.columnupdate({
             [1]: {
               name: "",
@@ -235,11 +264,18 @@ function CatSprite() {
             },
             [2]: {
               name: "",
-              items: [],
+              items:lst,
             },
           });
         }}
       />
+       <input
+            type="number"
+            val={4}
+            defaultValue={-1}
+            id="xcor"
+            style={{ color: "black",width:50 }}
+          />
       <div className="flex items-center space-x-4">
         <svg
           onClick={() => {
@@ -498,6 +534,14 @@ function CatSprite() {
           }}
         />
       </div>
+      <div className="mt-798" style={{marginTop:350}}>
+  <h3 className="text-lg font-semibold">Notes</h3>
+  <ol className="mt-2 list-decimal">
+    <li>To select a sprite, click on it. By default, Cat is selected.</li>
+    <li>Click on the Flag icon to execute the code blocks.</li>
+    <li>Click on the Delete icon to delete the Code Groups <hr></hr>and if want to delete any single code block then click <hr></hr> on -1 and enter block id no and delete it</li>
+  </ol>
+</div>
     </div>
   );
 }
