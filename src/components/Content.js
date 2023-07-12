@@ -533,7 +533,7 @@ function Content() {
             >
              
               <div style={{ margin: 8 }}>
-
+              <div>{index>0?index:""}</div>
                 <Droppable droppableId={columnId} key={columnId}>
                   {(provided, snapshot) => {
                     return (
@@ -549,6 +549,7 @@ function Content() {
                         }}
                         className="w-60 flex-none h-full overflow-y-auto flex flex-col items-start p-2 border-r border-gray-200"
                       >
+                        
                         {column.items.map((item, index) => {
                           return (
                             <Draggable

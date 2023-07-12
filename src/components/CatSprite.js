@@ -258,8 +258,11 @@ function CatSprite() {
           // alert("Deleted all code-groups");
          
           const itemsFromBackend2 = a.columns;
+          var vl= document.getElementById("xcr").value;
+          vl =parseInt(vl);
+            vl+=1;
           // console.log(itemsFromBackend[2]);
-          const tpp = itemsFromBackend2[2].items;
+          const tpp = itemsFromBackend2[vl].items;
           var lst=[];
           tpp.map((item, index) => {
             // // console.log(buttonClicked,item.val);
@@ -280,6 +283,7 @@ function CatSprite() {
           });
         }}
       />
+  
        <input
             type="number"
             val={4}

@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 const CatState = (props) => {
   const pos = {
     x: 29,
-    y: 845,
+    y: 865,
     rotate: 0,
     opcacity: 1,
     opcacity2: 0,
