@@ -351,6 +351,10 @@ const CatState = (props) => {
       name: "",
       items: [],
     }, 
+    [3]: {
+      name: "",
+      items: [],
+    }, 
     
   };
   const [columns, setColumns] = useState(columnsFromBackend);

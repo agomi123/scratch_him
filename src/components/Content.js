@@ -4,32 +4,356 @@ import { white } from "tailwindcss/colors";
 import uuid from "uuid/v4";
 import "react-dnd";
 import MoveContext from "../Context/MoveContext";
-const onDragEnd = (result, columns, columnupdate) => {
+const onDragEnd = (result, columns, columnupdate,setButtonClicked) => {
   if (!result.destination) return;
   const { source, destination } = result;
-
+  //  console.log(source);
+  //  console.log(destination);
+   
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
     const sourceItems = [...sourceColumn.items];
     const destItems = [...destColumn.items];
+    // console.log(sourceItems);
     const [removed] = sourceItems.splice(source.index, 1);
-    // console.log(removed);
-    destItems.splice(destination.index, 0, removed);
+    // console.log(removed.val);
+    var x= removed.val;
+
+    var copy=removed;
+    if(x==0){
+       copy= {
+        id: uuid(),
+        val:0,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 0,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            1.Move 10 steps
+          </div>
+        ),
+      }
+    }else if(x==1){
+      copy= {
+        id: uuid(),
+        val:1,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 1,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            2.Turn 15 degree clockwise
+          </div>
+        ),
+      }
+    }else if(x==2){
+      copy= {
+        id: uuid(),
+        val:2,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 2,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            3.Turn 15 degree anticlockwise
+          </div>
+        ),
+      }
+    }else if(x==3){
+     copy={
+      id: uuid(),
+      val:3,
+      content: (
+        <div
+          onClick={() => {
+            setButtonClicked({
+              acc: true,
+              val: 3,
+              x: 0,
+              y: 0,
+            });
+          }}
+        >
+          4.Go to random Pointer
+        </div>
+      ),
+    }
+    }else if(x==4){
+      copy={
+        id: uuid(),
+        val:4,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 4,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            5.Go to X+5
+          </div>
+        ),
+      }
+    }else if(x==5){
+      copy={
+        id: uuid(),
+        val:5,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 5,
+                x: document.getElementById("xcoor").value,
+                y: 0,
+              });
+  
+              // console.log(document.getElementById("xcoor").value);
+              // setButtonClicked({ acc: true, val: 0,x:document.getElementById("xcoor").value });
+            }}
+          >
+            6.Change X to
+            <input
+              type="number"
+              val={4}
+              defaultValue={10}
+              id="xcoor"
+              style={{ color: "black" }}
+            />
+          </div>
+        ),
+      }
+    }else if(x==6){
+      copy={
+        id: uuid(),
+        val:6,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 6,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            7.Say Hello for 2 seconds
+          </div>
+        ),
+      }
+    }else if(x==7){
+      copy={
+        id: uuid(),
+        val:7,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 7,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            8.Say Hello
+          </div>
+        ),
+      }
+    }else if(x==8){
+      copy={
+        id: uuid(),
+        val:8,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 8,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            9.Say Hmm for 2 seconds
+          </div>
+        ),
+      }
+    }else if(x==9){
+      copy={
+        id: uuid(),
+        val:9,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 9,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            10.Say Hmm
+          </div>
+        ),
+      }
+    }else if(x==10){
+      copy={
+        id: uuid(),
+        val:10,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 10,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            11.Show
+          </div>
+        ),
+      }
+    }else if(x==11){
+      copy={
+        id: uuid(),
+        val:11,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 11,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            12.hide
+          </div>
+        ),
+      }
+    }else if(x==12){
+      copy={
+        id: uuid(),
+        val:12,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 12,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            13.When Flag Clicked
+          </div>
+        ),
+      }
+    }else if(x==13){
+      copy={
+        id: uuid(),
+        val:13,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 13,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            14.When Sprite Clicked
+          </div>
+        ),
+      }
+    }else if(x==14){
+      copy={
+        id: uuid(),
+        val:14,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 14,
+                x: 0,
+                y: 0,
+              });
+            }}
+          >
+            15.Delete
+          </div>
+        ),
+      }
+    }else if(x==15){
+       copy={
+        id: uuid(),
+        val:15,
+        content: (
+          <div
+            onClick={() => {
+              setButtonClicked({
+                acc: true,
+                val: 15,
+                x: document.getElementById("xcoor").value,
+                y: 0,
+              });
+  
+              // console.log(document.getElementById("xcoor").value);
+              // setButtonClicked({ acc: true, val: 0,x:document.getElementById("xcoor").value });
+            }}
+          >
+            16.Change Y to
+            <input
+              type="number"
+              val={4}
+              defaultValue={10}
+              id="xcoor"
+              style={{ color: "black" }}
+            />
+          </div>
+        ),
+      }
+    }
+    destItems.splice(destination.index, 0, copy);
     columnupdate({
       ...columns,
-      [2]: {
+      [destination.droppableId]: {
         ...destColumn,
         items: destItems,
       },
     })
-    // setColumns({
-    //   ...columns,
-    //   [destination.droppableId]: {
-    //     ...destColumn,
-    //     items: destItems,
-    //   },
-    // });
   } else {
     const column = columns[source.droppableId];
     const copiedItems = [...column.items];
@@ -38,7 +362,7 @@ const onDragEnd = (result, columns, columnupdate) => {
     copiedItems.splice(destination.index, 0, removed);
     columnupdate({
       ...columns,
-      [2]: {
+      [destination.droppableId]: {
         ...column,
         items: copiedItems,
       },
@@ -193,7 +517,7 @@ function Content() {
   return (
     <div style={{ display: "flex", justifyContent: "center", minHeight:100 }}>
       <DragDropContext
-        onDragEnd={(result) => onDragEnd(result, columns, columnupdate)}
+        onDragEnd={(result) => onDragEnd(result, columns, columnupdate,setButtonClicked)}
       >
         {Object.entries(columns).map(([columnId, column], index) => {
           return (
@@ -219,7 +543,7 @@ function Content() {
                         style={{
                           background: "#f0f1f2",
                           padding: 4,
-                          width: 350,
+                          minWidth: 30,
                           minHeight: 900,
                           overflow:"auto"
                         }}

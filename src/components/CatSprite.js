@@ -208,9 +208,14 @@ function CatSprite() {
         style={{ cursor: "pointer" }}
         onClick={() => {
           //  <AiTwotoneDelete/>
+          var vl= document.getElementById("xcr").value;
+          vl =parseInt(vl);
+         vl+=1;
+          // console.log(vl);
+
           const itemsFromBackend = a.columns;
           // console.log(itemsFromBackend[2]);
-          const tpp = itemsFromBackend[2].items;
+          const tpp = itemsFromBackend[vl].items;
           // console.log(tpp);
           if (tpp == null) return;
           var lt = [];
@@ -222,7 +227,13 @@ function CatSprite() {
           // console.log(buttonClicked);
         }}
       />
-      
+       <input
+            type="number"
+            val={4}
+            defaultValue={1}
+            id="xcr"
+            style={{ color: "black",width:50 }}
+          />
       <AiTwotoneDelete
         style={{ cursor: "pointer", marginTop: "10px" }}
         onClick={() => {
