@@ -252,6 +252,10 @@ function CatSprite() {
                 name: "",
                 items:[],
               },
+              [3]: {
+                name: "",
+                items: [],
+              }, 
             });
             return;
           }
