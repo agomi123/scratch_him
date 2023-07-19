@@ -6,4 +6,4 @@ import Temp from "./temp";
 
 console.log("hi");
 
-ReactDOM.render(<Temp />,document.getElementById('root'));
+ReactDOM.render(<App />,document.getElementById('root'));
